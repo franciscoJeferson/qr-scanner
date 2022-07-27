@@ -16,6 +16,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  color: rgb(0, 0, 0);
 }
 
 #app {
@@ -32,4 +33,11 @@ button {
 a {
   font-family: 'Comfortaa', cursive;
   font-size: 1.1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(40, 40, 40);
+    color: rgb(255, 255, 255);
+  }
 }

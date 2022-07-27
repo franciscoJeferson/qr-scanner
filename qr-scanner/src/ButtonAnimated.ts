@@ -66,3 +66,12 @@ export default document.addEventListener('DOMContentLoaded', () => {
   const buttonsAnimateds: any = document.querySelectorAll<HTMLElement>('.button-animated')!
   new ButtonAnimated(buttonsAnimateds)
 })
+
+
+const AddManualButtonAnimation = (buttonsAnimateds: HTMLElement[]) => {
+  new ButtonAnimated(buttonsAnimateds);
+}
+
+export {
+  AddManualButtonAnimation
+}
