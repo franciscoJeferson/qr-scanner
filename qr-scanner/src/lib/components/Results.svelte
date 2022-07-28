@@ -13,6 +13,18 @@
       /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/g;
     regex = new RegExp(urlExp);
   }
+  const shareData = async (dataResult) => {
+    const shareData = {
+      title: '',
+      text: '',
+      url: dataResult,
+    }
+    try {
+    await navigator.share(shareData)
+  } catch(err) {
+    alert(`Error: ${err}`)
+  }
+  };
   const addAnimations = () => {
     const elements: any =
       document.querySelectorAll<HTMLElement>(".results__button")!;
@@ -46,11 +58,11 @@
         >
           New Scan
         </button>
-        {#if decodedData?.match(regex)}
-          <a href={decodedData} class="results__button ripples button-animated"
-            >Open</a
-          >
-        {/if}
+        <button
+          type="button"
+          class="results__button ripples button-animated"
+          on:click={() => shareData(decodedData)}>Open</button
+        >
       </div>
     </div>
   {/if}
