@@ -162,13 +162,5 @@
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    & #reader {
-      margin: 0 !important;
-      padding: 0 !important;
-      border: none !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
   }
 </style>
